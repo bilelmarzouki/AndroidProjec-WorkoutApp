@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:backgroundTint="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp">
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/exerciceImg"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="-2dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/exerciceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="218dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Push-up"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="218dp"
+            android:layout_marginTop="65dp"
+            android:gravity="center"
+            android:text="15 Reps"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rest1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="218dp"
+            android:layout_marginTop="107dp"
+            android:gravity="center"
+            android:text="Rest 1 Min"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/rest2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="5 Min Rest"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

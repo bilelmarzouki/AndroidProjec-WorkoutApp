@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ProjectAndroid</string>
+    <string-array name="TypesOfPerson">
+        <item>-- Choose Your Character --</item>
+        <item>Coach</item>
+        <item>Trainee</item>
+    </string-array>
+    <string-array name="bodyPart">
+        <item>-- Choose a Body Part --</item>
+        <item>SHOULDERS</item>
+        <item>BACK</item>
+        <item>ABS</item>
+        <item>ARMS</item>
+        <item>CARDIO</item>
+        <item>CHEST</item>
+        <item>FULL BODY</item>
+        <item>LEGS</item>
+    </string-array>
+</resources>
