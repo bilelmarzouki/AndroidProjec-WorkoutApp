@@ -70,7 +70,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public Cursor getPersonById(int id) {
 
-        String query = "select * from Person where id ="+String.valueOf(id);
+        String query = "SELECT * FROM Person WHERE TRIM(id) = '"+String.valueOf(id).trim()+"'";
         SQLiteDatabase DB = this.getReadableDatabase();
         Cursor cursor = null;
         if (DB != null) {
@@ -124,6 +124,18 @@ public class DbHelper extends SQLiteOpenHelper {
     public Cursor getExerciceByBodyPart(String bodypart) {
 
         String query = "SELECT * FROM Exercices WHERE TRIM(bodypart) = '"+bodypart.trim()+"'";
+        SQLiteDatabase DB = this.getReadableDatabase();
+        Cursor cursor = null;
+        if (DB != null) {
+            cursor = DB.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
+    public Cursor getExerciceByBodyPartAndCoache(String bodypart, int id) {
+
+        String query = "SELECT * FROM Exercices WHERE TRIM(bodypart) = '"+bodypart.trim()+"' AND TRIM(id) = '"+id+"'";
         SQLiteDatabase DB = this.getReadableDatabase();
         Cursor cursor = null;
         if (DB != null) {

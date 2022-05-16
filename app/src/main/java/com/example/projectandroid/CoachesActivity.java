@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.MatrixCursor;
 import android.database.MergeCursor;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +45,6 @@ public class CoachesActivity extends AppCompatActivity {
         cursorEx = DB.getExerciceByBodyPart(bodypart);
         cursorCoa = getAllCoachesWithThisBodyPart();
 
-
         /*coaches.add(new Person("David", "David123@gmail.com", "Coach", R.drawable.coach1));
         coaches.add(new Person("Sam", "Sam123@gmail.com", "Coach", R.drawable.coach2));
         coaches.add(new Person("Ahmed", "Ahmed123@gmail.com", "Coach", R.drawable.coach3));
@@ -73,18 +74,14 @@ public class CoachesActivity extends AppCompatActivity {
         int i = 0;
         boolean availble= false;
 
-
-
-
-
         while (cursorEx.moveToNext()) {
-            int CoachesIds[] = new int[0];
+            List<Integer> CoachesIds = new ArrayList<Integer>();
             if(cursorEx.isFirst()) {
                 cursorCoa = DB.getPersonById(cursorEx.getInt(8));
-                CoachesIds[i]= cursorEx.getInt(8);
+                CoachesIds.add(cursorEx.getInt(8));
             }else {
-                for (int j = 0; j < CoachesIds.length; j++) {
-                    if (CoachesIds[j] == cursorEx.getInt(8)) {
+                for (int j = 0; j < CoachesIds.size(); j++) {
+                    if (CoachesIds.get(j) == cursorEx.getInt(8)) {
                         availble = true;
                         break;
                     }
@@ -100,7 +97,7 @@ public class CoachesActivity extends AppCompatActivity {
                                                                     cursor.getString(4),
                                                                         cursor.getString(5) });
                     MergeCursor mergeCursor = new MergeCursor(new Cursor[] { matrixCursor, cursorCoa });
-                    CoachesIds[i]= cursorEx.getInt(8);
+                    CoachesIds.add(cursorEx.getInt(8));
                 }
             }
             i++;
